@@ -16,7 +16,7 @@ public class JsonTest {
         System.out.println("JackSON");
         try {
             ObjectMapper mapper = new ObjectMapper();
-            mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+//            mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
             String jackSonStr = mapper.writeValueAsString(u);
             System.out.println(jackSonStr);
             User u1 = mapper.readValue(jackSonStr, User.class);
