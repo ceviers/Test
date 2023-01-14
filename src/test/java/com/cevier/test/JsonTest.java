@@ -2,6 +2,7 @@ package com.cevier.test;
 
 import com.alibaba.fastjson.JSONObject;
 import com.cevier.test.pojo.User;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import org.junit.Test;
@@ -15,6 +16,7 @@ public class JsonTest {
         System.out.println("JackSON");
         try {
             ObjectMapper mapper = new ObjectMapper();
+            mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
             String jackSonStr = mapper.writeValueAsString(u);
             System.out.println(jackSonStr);
             User u1 = mapper.readValue(jackSonStr, User.class);
