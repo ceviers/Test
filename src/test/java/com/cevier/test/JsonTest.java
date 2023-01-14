@@ -30,8 +30,9 @@ public class JsonTest {
             User u2 = JSONObject.parseObject(fastJsonStr, User.class);
             System.out.println(u2);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("oops");
         }
+
         System.out.println("\nGSON");
         try {
             Gson gson = new Gson();
@@ -40,7 +41,7 @@ public class JsonTest {
             User u3 = gson.fromJson(gsonStr, User.class);
             System.out.println(u3);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("oops");
         }
 
     }
